@@ -1,11 +1,5 @@
 lexer grammar LaLexer;
 
-
-COMENTARIO
-    : '{' ( ~('\n') )*? '}'
-    ;
-
-
 PALAVRA_CHAVE
     : 'algoritmo'
     | 'fim_algoritmo'
@@ -73,6 +67,9 @@ WS
     : (' '|'\n'|'\r'|'\t') {skip();}
     ;
 
+COMENTARIO
+    : '{' ( ~('\n') )*? '}' {skip();}
+    ;
 
 OP_REL
     : '='
