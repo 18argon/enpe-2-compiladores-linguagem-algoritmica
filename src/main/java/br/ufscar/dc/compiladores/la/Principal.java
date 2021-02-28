@@ -21,7 +21,16 @@ public class Principal {
         while ((token = lexer.nextToken()).getType() != Token.EOF) {
             String type = LaLexer.VOCABULARY.getDisplayName(token.getType());
             if (type.equals("DESCONHECIDO")) {
-                String message = "Linha " + token.getLine() + ": " + token.getText() + " - simbolo nao identificado\n";
+                String invalidChar = token.getText();
+                String message;
+                if (invalidChar.equals("{")) {
+                    message = "Linha " + token.getLine() + ": comentario nao fechado\n";
+                } else if (invalidChar.equals("\"")) {
+                    message = "Linha " + token.getLine() + ": cadeia literal nao fechada\n";
+                } else {
+                    message = "Linha " + token.getLine() + ": " + token.getText() + " - simbolo nao identificado\n";
+                }
+
                 os.write(message.getBytes(StandardCharsets.UTF_8));
                 break;
             }
