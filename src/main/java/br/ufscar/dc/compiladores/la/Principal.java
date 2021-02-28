@@ -24,7 +24,7 @@ public class Principal {
         try {
             while ((token = lexer.nextToken()).getType() != Token.EOF) {
                 String type = LaLexer.VOCABULARY.getDisplayName(token.getType());
-                if (type.equals("PALAVRA_CHAVE") | type.equals("DELIM")) {
+                if (type.equals("PALAVRA_CHAVE") | type.equals("DELIM") | type.equals("OP_ARITM") |  type.equals("OP_REL") ) {
                     type = "'" + token.getText() + "'";
                 }
                 data = ("<'" + token.getText() + "'," + type + ">\n").getBytes();

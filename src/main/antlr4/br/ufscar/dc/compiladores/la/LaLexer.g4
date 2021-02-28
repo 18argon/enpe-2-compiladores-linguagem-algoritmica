@@ -80,7 +80,7 @@ OP_REL
     | '<'
     ;
 
-OP_ARIT
+OP_ARITM
     : '+'
     | '-'
     | '*'
