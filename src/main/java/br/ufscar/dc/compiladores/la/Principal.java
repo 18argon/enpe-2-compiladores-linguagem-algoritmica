@@ -21,7 +21,7 @@ public class Principal {
         while ((token = lexer.nextToken()).getType() != Token.EOF) {
             String type = LaLexer.VOCABULARY.getDisplayName(token.getType());
             if (type.equals("DESCONHECIDO")) {
-                String message = "Linha " + token.getLine() + ": " + token.getText() + " - simbolo nao identificado";
+                String message = "Linha " + token.getLine() + ": " + token.getText() + " - simbolo nao identificado\n";
                 os.write(message.getBytes(StandardCharsets.UTF_8));
                 break;
             }
