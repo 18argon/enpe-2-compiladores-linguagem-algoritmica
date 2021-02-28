@@ -125,3 +125,7 @@ DELIM
     | ','
     | '.'
     ;
+
+DESCONHECIDO
+    : .+?
+    ;
