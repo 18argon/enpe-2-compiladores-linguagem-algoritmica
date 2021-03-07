@@ -5,7 +5,7 @@ A linguagem LA foi desenvolvida pelo professor Jander Moreira, no âmbito do DC/
 
 ## Grupo:
 - Matheus Schmidt Figueiredo \[758616\]
-- Pabolo Vinícius da Rosa Pires \[760606\]
+- Pabolo Vinícius da Rosa Pires \[760648\]
 
 ## Dependências
 Os testes foram realizados em uma máquina linux com as seguintes dependências:
@@ -40,5 +40,5 @@ mvn install
 Este comando irá gerar a pasta `target` que contém o programa compilado e os testes podem serem executados com o comando.
 
 ```
-java -jar $PWD/corretor.jar "java -jar $PWD/target/la-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc $PWD/tmp/ $PWD/casos-de-teste/ "758616, 760606" lexico
+java -jar $PWD/corretor.jar "java -jar $PWD/target/la-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc $PWD/tmp/ $PWD/casos-de-teste/ "758616, 760648" lexico
 ```
