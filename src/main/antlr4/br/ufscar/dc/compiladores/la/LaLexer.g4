@@ -1,5 +1,6 @@
 lexer grammar LaLexer;
 
+// Palavras chave (não podem serem usadas como identificador)
 PALAVRA_CHAVE
     : 'algoritmo'
     | 'fim_algoritmo'
@@ -40,20 +41,21 @@ PALAVRA_CHAVE
     | 'e'
     ;
 
+// Identificador
 IDENT
     : ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
     ;
 
-
+// Número inteiro
 NUM_INT
     : ('0'..'9')+
     ;
-
+// Número real
 NUM_REAL
     : ('0'..'9')+ ('.' ('0'..'9')+)?
     ;
 
-
+// Cadeia de caracteres (string)
 CADEIA
     : '"' ( ESC_SEQ | ~('"'|'\\' | '\n') )* '"'
     ;
@@ -63,14 +65,17 @@ ESC_SEQ
     : '\\"'
     ;
 
+// Espaços em branco
 WS
     : (' '|'\n'|'\r'|'\t') {skip();}
     ;
 
+// Comentários
 COMENTARIO
     : '{' ( ~('\n') )*? '}' {skip();}
     ;
 
+// Operadores relacionais
 OP_REL
     : '='
     | '<>'
@@ -80,6 +85,7 @@ OP_REL
     | '<'
     ;
 
+// Operadores aritméticos
 OP_ARITM
     : '+'
     | '-'
@@ -88,30 +94,37 @@ OP_ARITM
     | '%'
     ;
 
+// Operador de atribuição
 OP_ATRIB
     : '<-'
     ;
 
+// Operador de intervalos
 OP_INTERV
     : '..'
     ;
 
+// Abre parênteses
 ABRE_PAR
     : '('
     ;
 
+// Fecha parênteses
 FECHA_PAR
     : ')'
     ;
 
+// Abre colchete
 ABRE_COLC
     : '['
     ;
 
+// Fecha colchete
 FECHA_COLC
     : ']'
     ;
 
+// Acento circunflexo (endereçamento)
 CIRCUMF
     : '^'
     ;
@@ -120,12 +133,14 @@ AND
     : '&'
     ;
 
+// Delimitadores
 DELIM
     : ':'
     | ','
     | '.'
     ;
 
+// Tokens desconhecidos
 DESCONHECIDO
     : .+?
     ;
