@@ -27,7 +27,7 @@ public class Principal {
                 String invalidChar = token.getText();
                 if (invalidChar.equals("{")) {
                     // Erro causado por comentário não fechado na mesma linha
-                    message = "Linha " + token.getLine() + ": comentário nao fechado\n";
+                    message = "Linha " + token.getLine() + ": comentario nao fechado\n";
                 } else if (invalidChar.equals("\"")) {
                     // Erro causado por cadeia não fechada na mesma linha
                     message = "Linha " + token.getLine() + ": cadeia literal nao fechada\n";
